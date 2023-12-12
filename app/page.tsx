@@ -2,6 +2,7 @@
 
 import { useContext } from 'react';
 import { ThemeContext } from './layout';
+import Header from '@/components/Header';
 
 export default function Home() {
 	const { theme, setTheme } = useContext(ThemeContext);
@@ -12,7 +13,8 @@ export default function Home() {
 
 	return (
 		<main>
-			<div>
+			<div className="hero">
+				<Header />
 				<button onClick={() => setTheme(toggleTheme())}>Toggle !</button>
 			</div>
 		</main>
