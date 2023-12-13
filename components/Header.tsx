@@ -5,9 +5,15 @@ import { ThemeContext } from '@/app/layout';
 
 const HeaderDiv = styled.div`
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 0.75rem;
+	padding: 1rem 1.5rem;
+`;
+
+const RightDiv = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	gap: 1.25rem;
 `;
 
@@ -23,8 +29,6 @@ export default function Header() {
 
 	return (
 		<HeaderDiv>
-			<span>Privacy, Please !</span>
-
 			<Icon>
 				<Image
 					src={theme === 'light' ? '/sun.svg' : '/moon.svg'}
@@ -34,13 +38,17 @@ export default function Header() {
 				/>
 			</Icon>
 
-			<Icon>
-				<Image
-					src={theme === 'light' ? '/dark-burger.svg' : '/light-burger.svg'}
-					alt="burger menu"
-					fill={true}
-				/>
-			</Icon>
+			<RightDiv>
+				<span>Privacy, Please !</span>
+
+				<Icon>
+					<Image
+						src={theme === 'light' ? '/dark-burger.svg' : '/light-burger.svg'}
+						alt="burger menu"
+						fill={true}
+					/>
+				</Icon>
+			</RightDiv>
 		</HeaderDiv>
 	);
 }

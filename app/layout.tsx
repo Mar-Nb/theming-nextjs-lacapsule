@@ -21,7 +21,7 @@ export default function RootLayout({
 	const [theme, setTheme] = useState('dark');
 
 	return (
-		<html lang="en">
+		<html lang="fr">
 			<ThemeContext.Provider value={{ theme, setTheme }}>
 				<GlobalStyles />
 				<body className={`${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>

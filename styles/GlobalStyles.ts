@@ -32,10 +32,9 @@ const styles = css`
 	.hero {
 		height: 100vh;
 		min-height: 550px;
-		background-image: url('/dark.png');
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center bottom;
+		display: flex;
+		flex-direction: column;
+		gap: 6rem;
 	}
 `;
 
