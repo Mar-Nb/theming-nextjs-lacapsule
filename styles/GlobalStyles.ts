@@ -29,12 +29,13 @@ const styles = css`
 		color: ${GlobalTheme.colors.light};
 	}
 
-	.hero {
-		height: 100vh;
-		min-height: 550px;
-		display: flex;
-		flex-direction: column;
-		gap: 6rem;
+	section h2 {
+		font-size: 3.5rem;
+		margin: 0;
+	}
+
+	section p {
+		font-size: larger;
 	}
 `;
 

@@ -29,3 +29,21 @@ export const ThemeButtonLight = styled(ThemeButton)`
 		background: ${GlobalTheme.border.button.light};
 	}
 `;
+
+export const ReversedButtonDark = styled(ThemeButton)`
+	border-color: ${GlobalTheme.bgColor.button.dark};
+	background: ${GlobalTheme.bgColor.button.dark};
+
+	&:hover {
+		background: transparent;
+	}
+`;
+
+export const ReversedButtonLight = styled(ThemeButton)`
+	border-color: ${GlobalTheme.bgColor.button.light};
+	background: ${GlobalTheme.bgColor.button.light};
+
+	&:hover {
+		background: transparent;
+	}
+`;

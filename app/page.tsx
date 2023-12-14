@@ -2,8 +2,21 @@
 
 import { useContext } from 'react';
 import { ThemeContext } from './layout';
-import { FlexColumnContainer, FlexContainer } from '@/components/Container';
-import { ThemeButtonDark, ThemeButtonLight } from '@/components/Buttons';
+import {
+	FlexColumnContainer,
+	FlexContainer,
+	Hero,
+	InnerSection,
+	Section,
+	SectionImagePart,
+	SectionTextPart
+} from '@/components/Container';
+import {
+	ReversedButtonDark,
+	ReversedButtonLight,
+	ThemeButtonDark,
+	ThemeButtonLight
+} from '@/components/Buttons';
 
 import Header from '@/components/Header';
 import logo from '../public/startpage-logo-dark-new.svg';
@@ -11,6 +24,8 @@ import Image from 'next/image';
 import Input from '@/components/Input';
 import Argument from '@/components/Argument';
 import HideAddLink from '@/components/HideAddLink';
+import manInLaptop from '../public/man-in-laptop.svg';
+import girlOnBrowser from '../public/girl-on-browser.svg';
 
 export default function Home() {
 	const { theme } = useContext(ThemeContext);
@@ -23,7 +38,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<div className="hero">
+			<Hero>
 				<Header />
 
 				<FlexContainer>
@@ -64,7 +79,62 @@ export default function Home() {
 						<HideAddLink />
 					</FlexColumnContainer>
 				</FlexContainer>
-			</div>
+			</Hero>
+
+			<Section
+				style={{
+					backgroundImage: 'url("/startpage-wave-bg.svg")',
+					backgroundPosition: '50% 100%'
+				}}
+			>
+				<InnerSection>
+					<SectionTextPart>
+						<h2>L&apos;internet sans suivi.</h2>
+						<p>
+							Un moyen plus sûr de rechercher et de naviguer en ligne sans
+							collecte, suivi ou ciblage de données personnelles.
+						</p>
+						{theme === 'dark' && (
+							<ThemeButtonDark>Ajouter à Firefox</ThemeButtonDark>
+						)}
+						{theme === 'light' && (
+							<ThemeButtonLight>Ajouter à Firefox</ThemeButtonLight>
+						)}
+					</SectionTextPart>
+
+					<SectionImagePart>
+						<Image
+							src={manInLaptop}
+							alt="Big laptop with man inside image"
+							fill={true}
+						/>
+					</SectionImagePart>
+				</InnerSection>
+			</Section>
+
+			<Section>
+				<InnerSection>
+					<SectionImagePart>
+						<Image src={girlOnBrowser} alt="Girl on a browser image" />
+					</SectionImagePart>
+
+					<SectionTextPart>
+						<h2>Le moteur de recherche le plus privé au monde.</h2>
+						<p>
+							Le moteur de recherche de Startpage et la fonction « Mode anonyme
+							» sont des moyens simples et gratuits de prendre le contrôle de
+							votre vie privée en ligne. Nous ne sauvegarderons ni ne vendrons
+							jamais votre historique de recherche.
+						</p>
+						{theme === 'dark' && (
+							<ReversedButtonDark>Ajouter à Firefox</ReversedButtonDark>
+						)}
+						{theme === 'light' && (
+							<ReversedButtonLight>Ajouter à Firefox</ReversedButtonLight>
+						)}
+					</SectionTextPart>
+				</InnerSection>
+			</Section>
 		</main>
 	);
 }
