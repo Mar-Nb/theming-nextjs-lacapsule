@@ -37,3 +37,9 @@ export const SectionImagePart = styled.div`
 	min-height: 28rem;
 	position: relative;
 `;
+
+export const GridCardRow = styled(FlexContainer)`
+	margin-top: 1.25rem;
+	width: 80%;
+	gap: 1.75rem;
+`;

@@ -13,6 +13,14 @@ export const GlobalTheme = {
 		button: {
 			dark: '#29ddcc',
 			light: '#29ddcc'
+		},
+		darkSection: {
+			dark: '#0c0d0f',
+			light: 'darkgrey'
+		},
+		card: {
+			dark: '#171b25',
+			light: '#fff'
 		}
 	},
 	border: {

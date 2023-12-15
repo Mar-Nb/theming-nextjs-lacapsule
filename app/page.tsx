@@ -5,6 +5,7 @@ import { ThemeContext } from './layout';
 import {
 	FlexColumnContainer,
 	FlexContainer,
+	GridCardRow,
 	Hero,
 	InnerSection,
 	Section,
@@ -26,6 +27,8 @@ import Argument from '@/components/Argument';
 import HideAddLink from '@/components/HideAddLink';
 import manInLaptop from '../public/man-in-laptop.svg';
 import girlOnBrowser from '../public/girl-on-browser.svg';
+import { GlobalTheme } from '@/styles/GlobalTheme';
+import Card from '@/components/Card';
 
 export default function Home() {
 	const { theme } = useContext(ThemeContext);
@@ -134,6 +137,62 @@ export default function Home() {
 						)}
 					</SectionTextPart>
 				</InnerSection>
+			</Section>
+
+			<Section
+				style={{
+					backgroundColor:
+						theme === 'dark'
+							? GlobalTheme.bgColor.darkSection.dark
+							: GlobalTheme.bgColor.darkSection.light
+				}}
+			>
+				<FlexColumnContainer style={{ gap: '1.5rem' }}>
+					<h2 style={{ textAlign: 'center' }}>
+						Une recherche de qualité se traduit par une véritable
+						confidentialité.
+					</h2>
+					<span>
+						Startpage fournit des résultats de recherche Google via notre
+						technologie exclusive de protection des données personnelles.
+					</span>
+
+					<GridCardRow>
+						<Card
+							image="/encrypted-connection.svg"
+							title="Connexion chiffrée"
+							subtitle="Votre adresse IP est supprimée de tous nos serveurs locaux."
+						/>
+						<Card
+							image="/price-trackers.svg"
+							title="Bloquer les traceurs de prix"
+							subtitle="Nous empêchons les tiers d'installer des dispositifs de suivi des prix sur vous."
+						/>
+						<Card
+							image="/retargeting-ads.svg"
+							title="Éviter le reciblage des annonces"
+							subtitle="Nous empêchons des tiers d'accéder à vos données personnelles pour vous cibler."
+						/>
+					</GridCardRow>
+
+					<GridCardRow>
+						<Card
+							image="/browse-anonymously.svg"
+							title="Naviguer anonymement"
+							subtitle="Le proxy « Mode anonyme » masque votre identité lorsque vous naviguez sur d'autres sites Web."
+						/>
+						<Card
+							image="/unprofiled-news.svg"
+							title="Recevoir des actualités sans profil"
+							subtitle="Accédez à des actualités qui ne sont pas basées sur votre comportement de navigation."
+						/>
+						<Card
+							image="/online-profiling.svg"
+							title="Empêcher le profilage en ligne"
+							subtitle="Nous ne créons pas de profils de données personnelles basés sur vos activités Internet."
+						/>
+					</GridCardRow>
+				</FlexColumnContainer>
 			</Section>
 		</main>
 	);
