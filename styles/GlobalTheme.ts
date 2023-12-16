@@ -21,6 +21,10 @@ export const GlobalTheme = {
 		card: {
 			dark: '#171b25',
 			light: '#fff'
+		},
+		quote: {
+			dark: '#252b3b',
+			light: 'lightgrey'
 		}
 	},
 	border: {

@@ -15,15 +15,13 @@ export default function Card(props: CardProps) {
 
 	return (
 		<FlexColumnContainer
+			className="card"
 			style={{
 				height: '280px',
 				gap: '.25rem',
-				padding: '1.25rem',
-				width: '33.33%',
-				borderRadius: '.25rem',
 				backgroundColor:
 					theme === 'dark'
-						? GlobalTheme.bgColor.card.dark
+						? `${GlobalTheme.bgColor.card.dark}`
 						: GlobalTheme.bgColor.card.light
 			}}
 		>

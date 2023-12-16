@@ -29,6 +29,8 @@ import manInLaptop from '../public/man-in-laptop.svg';
 import girlOnBrowser from '../public/girl-on-browser.svg';
 import { GlobalTheme } from '@/styles/GlobalTheme';
 import Card from '@/components/Card';
+import worldMap from '../public/map-desktop.svg';
+import QuoteCard from '@/components/QuoteCard';
 
 export default function Home() {
 	const { theme } = useContext(ThemeContext);
@@ -37,6 +39,14 @@ export default function Home() {
 		"Pas d'historique de recherche.",
 		'Pas de ciblage publicitaire',
 		'Pas de trace numérique'
+	];
+	
+	const newspaper = [
+		'news-bloomberg.svg',
+		'news-fast-company.svg',
+		'news-new-york-times.svg',
+		'news-techradar.svg',
+		'news-zdnet-dark.svg',
 	];
 
 	return (
@@ -192,6 +202,46 @@ export default function Home() {
 							subtitle="Nous ne créons pas de profils de données personnelles basés sur vos activités Internet."
 						/>
 					</GridCardRow>
+				</FlexColumnContainer>
+			</Section>
+
+			<Section>
+				<FlexColumnContainer style={{ gap: '3rem' }}>
+					<h2>Approuvé par les utilisateurs du monde entier.</h2>
+					<Image src={worldMap} alt="World map" />
+
+					<FlexContainer style={{ width: '90%', gap: '1.5rem' }}>
+						<QuoteCard
+							profilePic="/head-laura-brandimarte.jpg"
+							workTitle="Professeur MIS des questions sociales et éthiques de l'Internet"
+							desc="« Startpage contribue à rendre possible la réglementation de la confidentialité en ligne en masquant nos recherches sur Internet et en fournissant des résultats basés sur nos requêtes, et non sur qui/où nous sommes et quel est notre historique de navigation. »"
+							name="Laura Brandimarte"
+						/>
+
+						<QuoteCard
+							profilePic="/snowden.jpg"
+							workTitle="Président de la Fondation pour la liberté de la presse"
+							desc="« Faites attention à ce que vous partagez avec les grands fournisseurs de services… Il existe des alternatives comme Startpage… qui ne stockent pas ces informations. »"
+							name="Edward Snowden"
+						/>
+
+						<QuoteCard
+							profilePic="/schrems.jpg"
+							workTitle="Fondateur de NOYB - Centre européen des droits numériques"
+							desc="« Startpage a soutenu le travail de NOYB depuis le tout début et nous permet ainsi de faire appliquer efficacement la loi européenne sur la protection des données et de renforcer notre soutien à des alternatives favorables à la protection des données. »"
+							name="Max Schrems"
+						/>
+					</FlexContainer>
+				</FlexColumnContainer>
+				
+				<FlexColumnContainer>
+					<span>Présenté dans :</span>
+					
+					<FlexContainer style={{ gap: '3rem' }}>
+						{
+							newspaper.map((paper, i) => <Image src={`/${paper}`} alt={paper} height={30} width={175} />)
+						}
+					</FlexContainer>
 				</FlexColumnContainer>
 			</Section>
 		</main>
