@@ -49,6 +49,15 @@ export default function Home() {
 		`news-fast-company-${theme}.svg`
 	];
 
+	const footerSocials = [
+		'twitter.svg',
+		'reddit.svg',
+		'instagram.svg',
+		'facebook.svg',
+		'youtube.svg',
+		'mastodon.svg'
+	];
+
 	return (
 		<main>
 			<Hero>
@@ -281,11 +290,53 @@ export default function Home() {
 					</h3>
 					<Input
 						placeholder="Démarrez votre recherche !"
-						bgColor={GlobalTheme.bgColor.dark}
 						width="35rem"
+						bgColor={
+							theme === 'dark'
+								? GlobalTheme.bgColor.dark
+								: GlobalTheme.bgColor.light
+						}
 					/>
 				</FlexColumnContainer>
 			</Section>
+
+			<footer>
+				<FlexContainer style={{ gap: '.75rem' }}>
+					<Image
+						src="/privacy-badge.svg"
+						alt="privacy-badge"
+						width={72}
+						height={72}
+					/>
+					<p style={{ maxWidth: '160px', color: '#ebecf7' }}>
+						En savoir plus sur les recherches en mode privé
+					</p>
+				</FlexContainer>
+
+				<FlexColumnContainer style={{ gap: '.75rem' }}>
+					<Image src={logo} alt="logo" width={100} />
+					<FlexContainer style={{ gap: '1rem' }}>
+						<a>Confidentialité</a>
+						<a>La Société</a>
+						<a>Presse</a>
+					</FlexContainer>
+				</FlexColumnContainer>
+
+				<FlexContainer style={{ gap: '.5rem' }}>
+					{footerSocials.map((social, i) => (
+						<div className="socialContainer">
+							<Image
+								src={`/${social}`}
+								alt={social}
+								width={16}
+								height={16}
+								className="social"
+								key={i}
+							/>
+						</div>
+					))}
+				</FlexContainer>
+			</footer>
 		</main>
 	);
 }

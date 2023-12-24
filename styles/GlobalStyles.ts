@@ -43,6 +43,66 @@ const styles = css`
 		width: 33.33%;
 		border-radius: 6px;
 	}
+
+	.dark-theme footer {
+		background-color: ${GlobalTheme.bgColor.footer.dark};
+	}
+
+	.light-theme footer {
+		background-color: ${GlobalTheme.bgColor.footer.light};
+	}
+
+	footer {
+		padding: 1.5rem 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	a {
+		cursor: pointer;
+	}
+
+	.dark-theme footer a:hover {
+		color: ${GlobalTheme.colors.link.dark};
+	}
+
+	.light-theme footer a:hover {
+		color: ${GlobalTheme.colors.link.light};
+	}
+
+	.social {
+		opacity: 1;
+		filter: brightness(0) invert(1);
+		transition: opacity 0.2s ease 0s;
+		object-fit: contain;
+	}
+
+	.socialContainer {
+		width: 36px;
+		height: 36px;
+		border-radius: 9999px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.dark-theme .socialContainer {
+		background-color: ${GlobalTheme.bgColor.footerSocial.dark};
+
+		&:hover {
+			background-color: ${GlobalTheme.colors.link.dark};
+		}
+	}
+
+	.light-theme .socialContainer {
+		background-color: ${GlobalTheme.bgColor.footerSocial.light};
+
+		&:hover {
+			background-color: ${GlobalTheme.colors.link.light};
+		}
+	}
 `;
 
 const GlobalStyles = createGlobalStyle`

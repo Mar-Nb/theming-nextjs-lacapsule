@@ -25,6 +25,14 @@ export const GlobalTheme = {
 		quote: {
 			dark: '#252b3b',
 			light: 'lightgrey'
+		},
+		footer: {
+			dark: '#0c0d0f',
+			light: '#fff'
+		},
+		footerSocial: {
+			dark: '#2e3443',
+			light: '#000'
 		}
 	},
 	border: {
@@ -32,9 +40,5 @@ export const GlobalTheme = {
 			dark: '#29ddcc',
 			light: '#29ddcc'
 		}
-	},
-	fill: {
-		dark: '#fff',
-		light: '#000'
 	}
 };
