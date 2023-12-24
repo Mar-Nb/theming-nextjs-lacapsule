@@ -19,8 +19,8 @@ export default function Card(props: QuoteCardProps) {
 		<FlexColumnContainer
 			className="card"
 			style={{
-			height: '250px',
-			justifyContent: 'space-between',
+				height: '250px',
+				justifyContent: 'space-between',
 				gap: '1.25rem',
 				backgroundColor:
 					theme === 'dark'
@@ -30,7 +30,9 @@ export default function Card(props: QuoteCardProps) {
 		>
 			<span style={{ fontSize: 'larger' }}>{props.desc}</span>
 
-			<FlexContainer style={{ gap: '.75rem', width: '100%', justifyContent: 'flex-start' }}>
+			<FlexContainer
+				style={{ gap: '.75rem', width: '100%', justifyContent: 'flex-start' }}
+			>
 				<Image
 					src={props.profilePic}
 					width={50}
@@ -41,8 +43,10 @@ export default function Card(props: QuoteCardProps) {
 
 				<FlexColumnContainer style={{ alignItems: 'flex-start' }}>
 					<span style={{ fontWeight: 'bold' }}>{props.name}</span>
-					<span style={{ color: 'lightgrey' }}><small>{props.workTitle}</small></span>
-				</FlexColumnContainer>			
+					<span style={{ color: 'lightgrey' }}>
+						<small>{props.workTitle}</small>
+					</span>
+				</FlexColumnContainer>
 			</FlexContainer>
 		</FlexColumnContainer>
 	);

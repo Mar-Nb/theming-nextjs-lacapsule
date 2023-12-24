@@ -40,13 +40,13 @@ export default function Home() {
 		'Pas de ciblage publicitaire',
 		'Pas de trace numérique'
 	];
-	
+
 	const newspaper = [
-		'news-bloomberg.svg',
-		'news-fast-company.svg',
-		'news-new-york-times.svg',
-		'news-techradar.svg',
-		'news-zdnet-dark.svg',
+		`news-bloomberg-${theme}.svg`,
+		`news-new-york-times-${theme}.svg`,
+		`news-techradar-${theme}.svg`,
+		`news-zdnet-${theme}.svg`,
+		`news-fast-company-${theme}.svg`
 	];
 
 	return (
@@ -97,7 +97,9 @@ export default function Home() {
 			<Section
 				style={{
 					backgroundImage: 'url("/startpage-wave-bg.svg")',
-					backgroundPosition: '50% 100%'
+					backgroundPosition: '50% 100%',
+					backgroundSize: 'cover',
+					minHeight: '700px'
 				}}
 			>
 				<InnerSection>
@@ -206,42 +208,82 @@ export default function Home() {
 			</Section>
 
 			<Section>
-				<FlexColumnContainer style={{ gap: '3rem' }}>
-					<h2>Approuvé par les utilisateurs du monde entier.</h2>
-					<Image src={worldMap} alt="World map" />
+				<FlexColumnContainer style={{ gap: '2rem' }}>
+					<FlexColumnContainer style={{ gap: '3rem' }}>
+						<h2>Approuvé par les utilisateurs du monde entier.</h2>
+						<Image src={worldMap} alt="World map" />
 
-					<FlexContainer style={{ width: '90%', gap: '1.5rem' }}>
-						<QuoteCard
-							profilePic="/head-laura-brandimarte.jpg"
-							workTitle="Professeur MIS des questions sociales et éthiques de l'Internet"
-							desc="« Startpage contribue à rendre possible la réglementation de la confidentialité en ligne en masquant nos recherches sur Internet et en fournissant des résultats basés sur nos requêtes, et non sur qui/où nous sommes et quel est notre historique de navigation. »"
-							name="Laura Brandimarte"
-						/>
+						<FlexContainer style={{ width: '90%', gap: '1.5rem' }}>
+							<QuoteCard
+								profilePic="/head-laura-brandimarte.jpg"
+								workTitle="Professeur MIS des questions sociales et éthiques de l'Internet"
+								desc="« Startpage contribue à rendre possible la réglementation de la confidentialité en ligne en masquant nos recherches sur Internet et en fournissant des résultats basés sur nos requêtes, et non sur qui/où nous sommes et quel est notre historique de navigation. »"
+								name="Laura Brandimarte"
+							/>
 
-						<QuoteCard
-							profilePic="/snowden.jpg"
-							workTitle="Président de la Fondation pour la liberté de la presse"
-							desc="« Faites attention à ce que vous partagez avec les grands fournisseurs de services… Il existe des alternatives comme Startpage… qui ne stockent pas ces informations. »"
-							name="Edward Snowden"
-						/>
+							<QuoteCard
+								profilePic="/snowden.jpg"
+								workTitle="Président de la Fondation pour la liberté de la presse"
+								desc="« Faites attention à ce que vous partagez avec les grands fournisseurs de services… Il existe des alternatives comme Startpage… qui ne stockent pas ces informations. »"
+								name="Edward Snowden"
+							/>
 
-						<QuoteCard
-							profilePic="/schrems.jpg"
-							workTitle="Fondateur de NOYB - Centre européen des droits numériques"
-							desc="« Startpage a soutenu le travail de NOYB depuis le tout début et nous permet ainsi de faire appliquer efficacement la loi européenne sur la protection des données et de renforcer notre soutien à des alternatives favorables à la protection des données. »"
-							name="Max Schrems"
-						/>
-					</FlexContainer>
+							<QuoteCard
+								profilePic="/schrems.jpg"
+								workTitle="Fondateur de NOYB - Centre européen des droits numériques"
+								desc="« Startpage a soutenu le travail de NOYB depuis le tout début et nous permet ainsi de faire appliquer efficacement la loi européenne sur la protection des données et de renforcer notre soutien à des alternatives favorables à la protection des données. »"
+								name="Max Schrems"
+							/>
+						</FlexContainer>
+					</FlexColumnContainer>
+
+					<FlexColumnContainer
+						style={{ alignItems: 'flex-start', width: '90%' }}
+					>
+						<p style={{ fontSize: 'larger', fontWeight: 'bolder' }}>
+							Présenté dans :
+						</p>
+
+						<FlexContainer
+							style={{
+								gap: '4rem',
+								justifyContent: 'flex-start',
+								alignItems: 'center',
+								alignSelf: 'stretch'
+							}}
+						>
+							{newspaper.map((paper, i) => (
+								<svg
+									width="200"
+									height={paper.includes('zd') ? '70' : '26'}
+									xmlnsXlink="http://www.w3.org/1999/xlink"
+									key={i}
+								>
+									<image href={`/${paper}`} width="100%" height="100%" />
+								</svg>
+							))}
+						</FlexContainer>
+					</FlexColumnContainer>
 				</FlexColumnContainer>
-				
-				<FlexColumnContainer>
-					<span>Présenté dans :</span>
-					
-					<FlexContainer style={{ gap: '3rem' }}>
-						{
-							newspaper.map((paper, i) => <Image src={`/${paper}`} alt={paper} height={30} width={175} />)
-						}
-					</FlexContainer>
+			</Section>
+
+			<Section
+				style={{
+					backgroundImage: 'url("/startpage-wave-reversed-bg.svg")',
+					backgroundPosition: '50% 0%',
+					backgroundSize: 'cover',
+					padding: '10rem 2rem 8rem'
+				}}
+			>
+				<FlexColumnContainer style={{ gap: '1rem' }}>
+					<h3 style={{ fontSize: '22px' }}>
+						Protégez votre vie privée, une recherche à la fois.
+					</h3>
+					<Input
+						placeholder="Démarrez votre recherche !"
+						bgColor={GlobalTheme.bgColor.dark}
+						width="35rem"
+					/>
 				</FlexColumnContainer>
 			</Section>
 		</main>

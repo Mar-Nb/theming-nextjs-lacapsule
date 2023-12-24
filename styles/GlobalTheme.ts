@@ -32,5 +32,9 @@ export const GlobalTheme = {
 			dark: '#29ddcc',
 			light: '#29ddcc'
 		}
+	},
+	fill: {
+		dark: '#fff',
+		light: '#000'
 	}
 };

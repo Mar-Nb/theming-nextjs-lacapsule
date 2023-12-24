@@ -37,7 +37,7 @@ const styles = css`
 	section p {
 		font-size: larger;
 	}
-	
+
 	.card {
 		padding: 1.25rem;
 		width: 33.33%;

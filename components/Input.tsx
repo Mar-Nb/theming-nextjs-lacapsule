@@ -16,6 +16,11 @@ const CustomInput = styled.input`
 	transition-timing-function: linear;
 	transition-duration: 200ms;
 	color: inherit;
+	font-size: 16px;
+
+	&:focus {
+		outline: none;
+	}
 `;
 
 export default function Input(props: InputProps) {
