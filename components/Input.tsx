@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 type InputProps = {
@@ -24,11 +25,23 @@ const CustomInput = styled.input`
 `;
 
 export default function Input(props: InputProps) {
+	const [searchText, setSearchText] = useState('');
+
+	const handleSubmit = (event: { key: string }) => {
+		if (event.key === 'Enter' && searchText)
+			window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
+				searchText
+			)}`;
+	};
+
 	return (
 		<CustomInput
 			type="search"
+			value={searchText}
 			placeholder={props.placeholder}
 			style={{ width: props.width, backgroundColor: props.bgColor }}
+			onChange={(e) => setSearchText(e.target.value)}
+			onKeyDown={handleSubmit}
 		/>
 	);
 }

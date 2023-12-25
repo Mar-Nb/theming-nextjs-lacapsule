@@ -2,6 +2,7 @@
 
 import { useContext } from 'react';
 import { ThemeContext } from './layout';
+import { GlobalTheme } from '@/styles/GlobalTheme';
 import {
 	FlexColumnContainer,
 	FlexContainer,
@@ -27,7 +28,6 @@ import Argument from '@/components/Argument';
 import HideAddLink from '@/components/HideAddLink';
 import manInLaptop from '../public/man-in-laptop.svg';
 import girlOnBrowser from '../public/girl-on-browser.svg';
-import { GlobalTheme } from '@/styles/GlobalTheme';
 import Card from '@/components/Card';
 import worldMap from '../public/map-desktop.svg';
 import QuoteCard from '@/components/QuoteCard';
