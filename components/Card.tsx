@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FlexColumnContainer } from './Container';
 import { GlobalTheme } from '@/styles/GlobalTheme';
-import { ThemeContext } from '@/app/layout';
+import { ThemeContext } from '@/styles/themeContext';
 import { useContext } from 'react';
 
 type CardProps = {

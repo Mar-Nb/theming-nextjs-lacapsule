@@ -1,5 +1,5 @@
 import { FlexColumnContainer, FlexContainer } from './Container';
-import { ThemeContext } from '@/app/layout';
+import { ThemeContext } from '@/styles/themeContext';
 import { useContext } from 'react';
 import { GlobalTheme } from '@/styles/GlobalTheme';
 

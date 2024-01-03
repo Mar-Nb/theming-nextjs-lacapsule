@@ -1,4 +1,4 @@
-import { ThemeContext } from '@/app/layout';
+import { ThemeContext } from '@/styles/themeContext';
 import { GlobalTheme } from '@/styles/GlobalTheme';
 import { useContext } from 'react';
 import styled from 'styled-components';

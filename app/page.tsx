@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext } from 'react';
-import { ThemeContext } from './layout';
+import { ThemeContext } from '@/styles/themeContext';
 import { GlobalTheme } from '@/styles/GlobalTheme';
 import {
 	FlexColumnContainer,
@@ -324,14 +324,13 @@ export default function Home() {
 
 				<FlexContainer style={{ gap: '.5rem' }}>
 					{footerSocials.map((social, i) => (
-						<div className="socialContainer">
+						<div className="socialContainer" key={i}>
 							<Image
 								src={`/${social}`}
 								alt={social}
 								width={16}
 								height={16}
 								className="social"
-								key={i}
 							/>
 						</div>
 					))}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useContext } from 'react';
-import { ThemeContext } from '@/app/layout';
+import { ThemeContext } from '@/styles/themeContext';
 
 const HeaderDiv = styled.div`
 	display: flex;
