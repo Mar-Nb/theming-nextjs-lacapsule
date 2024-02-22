@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { GlobalTheme } from '@/styles/GlobalTheme';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
+import { ThemeContext } from '@/styles/themeContext';
 
 type InputProps = {
 	bgColor: string;
@@ -26,6 +28,9 @@ const CustomInput = styled.input`
 
 export default function Input(props: InputProps) {
 	const [searchText, setSearchText] = useState('');
+	const { theme } = useContext(ThemeContext);
+	const borderColor =
+		GlobalTheme.border.input[theme as keyof typeof GlobalTheme.border.input];
 
 	const handleSubmit = (event: { key: string }) => {
 		if (event.key === 'Enter' && searchText)
@@ -39,7 +44,11 @@ export default function Input(props: InputProps) {
 			type="search"
 			value={searchText}
 			placeholder={props.placeholder}
-			style={{ width: props.width, backgroundColor: props.bgColor }}
+			style={{
+				width: props.width,
+				backgroundColor: props.bgColor,
+				borderColor
+			}}
 			onChange={(e) => setSearchText(e.target.value)}
 			onKeyDown={handleSubmit}
 		/>

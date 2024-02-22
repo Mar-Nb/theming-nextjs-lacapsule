@@ -308,7 +308,7 @@ export default function Home() {
 						width={72}
 						height={72}
 					/>
-					<p style={{ maxWidth: '160px', color: '#ebecf7' }}>
+					<p style={{ maxWidth: '160px' }}>
 						En savoir plus sur les recherches en mode privé
 					</p>
 				</FlexContainer>

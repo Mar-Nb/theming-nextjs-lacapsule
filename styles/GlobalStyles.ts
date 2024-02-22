@@ -100,7 +100,7 @@ const styles = css`
 		background-color: ${GlobalTheme.bgColor.footerSocial.light};
 
 		&:hover {
-			background-color: ${GlobalTheme.colors.link.light};
+			background-color: #444fc1;
 		}
 	}
 `;

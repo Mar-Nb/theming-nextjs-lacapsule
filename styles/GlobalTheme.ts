@@ -1,34 +1,38 @@
 export const GlobalTheme = {
 	colors: {
 		dark: '#ffffff',
-		light: '#000000',
+		light: '#000',
 		link: {
 			dark: '#a6afff',
+			light: '#fff'
+		},
+		quoteWorkTitle: {
+			dark: 'lightgrey',
 			light: '#000'
 		}
 	},
 	bgColor: {
 		dark: '#171b25',
-		light: '#ffffff',
+		light: 'lightgrey',
 		button: {
 			dark: '#29ddcc',
 			light: '#29ddcc'
 		},
 		darkSection: {
 			dark: '#0c0d0f',
-			light: 'darkgrey'
+			light: 'grey'
 		},
 		card: {
 			dark: '#171b25',
-			light: '#fff'
+			light: 'lightgrey'
 		},
 		quote: {
 			dark: '#252b3b',
-			light: 'lightgrey'
+			light: 'darkgrey'
 		},
 		footer: {
 			dark: '#0c0d0f',
-			light: '#fff'
+			light: 'lightgrey'
 		},
 		footerSocial: {
 			dark: '#2e3443',
@@ -39,6 +43,10 @@ export const GlobalTheme = {
 		button: {
 			dark: '#29ddcc',
 			light: '#29ddcc'
+		},
+		input: {
+			dark: 'inherit',
+			light: '#000'
 		}
 	}
 };
